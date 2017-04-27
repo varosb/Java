@@ -3,68 +3,33 @@
 //2. Constructores
 //3.get de set
 //4. to string
-public class Moto {
+public class Moto extends Vehiculo {
 //1. Crear atributos
-	
-	String  matricula,
-			marca,
-			modelo;
 	
 	char tipo;
 			
-	int cilindrada,
-		ano,
+	int ano,
 		rueda,
 		plazas;
 	
 	double capacidad,
 			deposito;
 	
-	boolean itv,
-			proteccion,
+	boolean proteccion,
 			pata;
-	//2. Constructores
 
-	public Moto(String matricula, String marca, String modelo, char tipo,
-			int cilindrada, int ano, int rueda, int plazas, double capacidad,
-			boolean itv, boolean proteccion, boolean pata) {
-		super();
-		this.matricula = matricula;
-		this.marca = marca;
-		this.modelo = modelo;
+	public Moto(String matricula, String marca, String modelo, int cilindrada,
+			boolean itv, char tipo, int ano, int rueda, int plazas,
+			double capacidad, double deposito, boolean proteccion, boolean pata) {
+		super(matricula, marca, modelo, cilindrada, itv);
 		this.tipo = tipo;
-		this.cilindrada = cilindrada;
 		this.ano = ano;
 		this.rueda = rueda;
 		this.plazas = plazas;
 		this.capacidad = capacidad;
-		this.itv = itv;
+		this.deposito = deposito;
 		this.proteccion = proteccion;
 		this.pata = pata;
-	}
-	//3 get de set
-	public String getMatricula() {
-		return matricula;
-	}
-
-	public void setMatricula(String matricula) {
-		this.matricula = matricula;
-	}
-
-	public String getMarca() {
-		return marca;
-	}
-
-	public void setMarca(String marca) {
-		this.marca = marca;
-	}
-
-	public String getModelo() {
-		return modelo;
-	}
-
-	public void setModelo(String modelo) {
-		this.modelo = modelo;
 	}
 
 	public char getTipo() {
@@ -73,14 +38,6 @@ public class Moto {
 
 	public void setTipo(char tipo) {
 		this.tipo = tipo;
-	}
-
-	public int getCilindrada() {
-		return cilindrada;
-	}
-
-	public void setCilindrada(int cilindrada) {
-		this.cilindrada = cilindrada;
 	}
 
 	public int getAno() {
@@ -115,12 +72,12 @@ public class Moto {
 		this.capacidad = capacidad;
 	}
 
-	public boolean isItv() {
-		return itv;
+	public double getDeposito() {
+		return deposito;
 	}
 
-	public void setItv(boolean itv) {
-		this.itv = itv;
+	public void setDeposito(double deposito) {
+		this.deposito = deposito;
 	}
 
 	public boolean isProteccion() {
@@ -138,28 +95,18 @@ public class Moto {
 	public void setPata(boolean pata) {
 		this.pata = pata;
 	}
-	
-	//4.to string
+
 	public String toString() {
 		return "Moto [matricula=" + matricula + ", marca=" + marca
-				+ ", modelo=" + modelo + ", tipo=" + tipo + ", cilindrada="
-				+ cilindrada + ", ano=" + ano + ", rueda=" + rueda
-				+ ", plazas=" + plazas + ", capacidad=" + capacidad + ", itv="
-				+ itv + ", proteccion=" + proteccion + ", pata=" + pata + "]";
+				+ ", modelo=" + modelo + ", cilindrada=" + cilindrada
+				+ ", itv=" + itv + ", tipo=" + tipo + ", ano=" + ano
+				+ ", rueda=" + rueda + ", plazas=" + plazas + ", capacidad="
+				+ capacidad + ", deposito=" + deposito + ", proteccion="
+				+ proteccion + ", pata=" + pata + "]";
 	}
 	
-
-	//5.Creacion manual de métodos
 	
-		// Método que añade un 21% de IVA al precio del coche
-		
-		public double precioMoto () {
-			double precioMoto = 0;
-					precioTotal = precio * 1.21;
-					return precioTotal;
-			
-		}
-	}
+	
 	
 	
 
